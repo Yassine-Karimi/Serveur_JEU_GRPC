@@ -1,0 +1,6 @@
+syntax="proto3"
+
+option java_package = "ma.enset.stubs"
+    service Jeu{
+
+    }
