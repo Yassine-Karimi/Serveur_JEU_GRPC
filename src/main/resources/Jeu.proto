@@ -1,6 +1,40 @@
-syntax="proto3"
+syntax="proto3";
 
-option java_package = "ma.enset.stubs"
-    service Jeu{
+option java_package = "ma.enset.stubs";
 
-    }
+service Jeu {
+    rpc StartGame(StartRequest) returns (StartResponse) {}
+    rpc GuessNumber(GuessRequest) returns (GuessResponse) {}
+    rpc Winner(WinnerRequest) returns (WinnerResponse) {}
+    rpc AddPlayer(PlayerRequest) returns (PlayerResponse) {}
+}
+
+message StartRequest {}
+
+message StartResponse {
+    string message = 1;
+}
+
+message GuessRequest {
+    int32 number = 1;
+    int32 playerId = 2;
+}
+
+message GuessResponse {
+    string message = 1;
+}
+
+message WinnerRequest {}
+
+message WinnerResponse {
+    int32 winnerId = 1;
+    string message = 2;
+}
+
+message PlayerRequest {
+    string name = 1;
+}
+
+message PlayerResponse {
+    string message = 1;
+}
