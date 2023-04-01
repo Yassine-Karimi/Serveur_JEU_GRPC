@@ -45,7 +45,11 @@ import java.util.Scanner;
                     System.out.println("The game has started!");
                 }
             });
-
+            try {
+                Thread.sleep(5 * 1000);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
             // Boucle pour deviner le nombre secret
             while (true) {
                 System.out.println("Enter your guess:");
